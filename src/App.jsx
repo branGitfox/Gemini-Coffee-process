@@ -361,9 +361,9 @@ Input utilisateur : ${search}
         <h1 className="text-2xl font-bold">Recherche Process Café</h1>
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="px-4 py-2 rounded-xl font-semibold shadow-md transition 
-                     bg-white/80 dark:bg-gray-700 dark:text-white text-gray-700
-                     hover:scale-105"
+          className={`px-4 py-2 rounded-xl font-semibold shadow-md transition 
+                      ${darkMode?'bg-gray-800 text-white':'bg-white/80 text-gray-800'}
+                     hover:scale-105`}
         >
           {darkMode ? "☀️ Mode Clair" : "🌙 Mode Sombre"}
         </button>
@@ -374,9 +374,9 @@ Input utilisateur : ${search}
         <input
           type="text"
           placeholder="Ex: grains cassés, surchauffe du moulin..."
-          className="flex-1 p-3 rounded-xl border border-gray-300 shadow-sm 
-                     focus:ring-2 focus:ring-green-500 outline-none text-white
-                     dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400"
+          className={`flex-1 p-3 rounded-xl border border-gray-300 shadow-sm   focus:ring-2 focus:ring-green-500 outline-none ${darkMode?'bg-gray-800':'bg-white'} dark:border-gray-600 dark:placeholder-gray-400`}
+                    
+                   
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
@@ -387,7 +387,7 @@ Input utilisateur : ${search}
                      bg-green-600 text-white hover:bg-green-700 transition 
                      disabled:opacity-50"
         >
-          {loading ? "..." : "Search"}
+          {loading ? "Analyse IA..." : "Rechercher"}
         </button>
       </div>
 
@@ -443,6 +443,7 @@ Input utilisateur : ${search}
           </p>
         )
       )}
+      <footer  className="  text-center w-1/2 m-auto">Copyright ©  <a href="https://github.com/branGitfox" className=" text-blue-300 underline decoration-dotted decoration-blue-800">BranGitfox</a> {new Date().getFullYear()}</footer>
     </div>
   );
 }
