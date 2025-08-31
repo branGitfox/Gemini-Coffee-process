@@ -3,5 +3,5 @@ Generate a coffee process with `Gemini`, by giving a predefined response and ada
 
 ## Techs
 
-<li>Gemini</li>
+<li>Gemini API Generative</li>
 <li>React JS</li>
